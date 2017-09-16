@@ -45,11 +45,12 @@ def load_csv(basename, header_type=None):
 
 if __name__ == '__main__':
     db_conn = psycopg2.connect(CONNECT)
-    basename_list = ['genes', 'gtex_gene_expression', 'gtex_gene_model',
+    basename_list = ['genes', 'gtex_gene_model',
         'gtex_sample', 'gtex_tissue', 'toxicogenomics_chemicals']
     for basename in basename_list:
         load_csv(basename)
     special_list = [('gtex_donor', [('age', 'integer')]),
+                    ('gtex_gene_expression_processed', [('rpkm_expressions', 'float[]')]),
                     ('gtex_sample_expression', [('rpkm_expression', 'float')]),
                     ('tcga', [('fpkm_expression', 'float')]),
                     ('toxicogenomics_diseases', [('inference_score', 'float')])]
