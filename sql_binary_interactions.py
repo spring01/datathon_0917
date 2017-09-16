@@ -20,22 +20,26 @@ if __name__ == '__main__':
             if key not in all_keys:
                 all_keys.append(key)
 
-    new_header = 'gene_id,chemical_name,chemical_id,gene_forms,interactions,interaction_actions'
-    print new_header
-    for i in range(len(table)):
-        tup = table[i]
-        info = tup[-1]
-        vector = []
-        for key in all_keys:
-            if key in info:
-                vector.append('1')
-            else:
-                vector.append('0')
-        new_list = []
-        for ele in tup[:-1]:
-            if ele is None:
-                new_list.append('')
-            else:
-                new_list.append('"' + ele + '"')
-        vector_str = ',"{' + ','.join(vector) + '}"'
-        print ','.join(new_list) + vector_str
+    print ', '.join(all_keys)
+    print len(all_keys)
+    print all_keys[7], all_keys[25], all_keys[36], all_keys[27],  all_keys[9]
+
+    #~ new_header = 'gene_id,chemical_name,chemical_id,gene_forms,interactions,interaction_actions'
+    #~ print new_header
+    #~ for i in range(len(table)):
+        #~ tup = table[i]
+        #~ info = tup[-1]
+        #~ vector = []
+        #~ for key in all_keys:
+            #~ if key in info:
+                #~ vector.append('1')
+            #~ else:
+                #~ vector.append('0')
+        #~ new_list = []
+        #~ for ele in tup[:-1]:
+            #~ if ele is None:
+                #~ new_list.append('')
+            #~ else:
+                #~ new_list.append('"' + ele + '"')
+        #~ vector_str = ',"{' + ','.join(vector) + '}"'
+        #~ print ','.join(new_list) + vector_str
