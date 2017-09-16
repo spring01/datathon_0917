@@ -36,6 +36,6 @@ if __name__ == '__main__':
             if ele is None:
                 new_list.append('')
             else:
-                new_list.append(ele)
-        vector_str = ',{' + ','.join(vector) + '}'
+                new_list.append('"' + ele + '"')
+        vector_str = ',"{' + ','.join(vector) + '}"'
         print ','.join(new_list) + vector_str

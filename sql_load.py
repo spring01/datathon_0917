@@ -53,7 +53,8 @@ if __name__ == '__main__':
                     ('gtex_gene_expression_processed', [('rpkm_expressions', 'float[]')]),
                     ('gtex_sample_expression', [('rpkm_expression', 'float')]),
                     ('tcga', [('fpkm_expression', 'float')]),
-                    ('toxicogenomics_diseases', [('inference_score', 'float')])]
+                    ('toxicogenomics_diseases', [('inference_score', 'float')]),
+                    ('toxicogenomics_chemicals_binary', [('interaction_actions', 'int[]')])]
     for special in special_list:
         load_csv(*special)
 
